@@ -1,0 +1,25 @@
+body {
+  background-color: lightsteelblue;
+}
+
+.screen {
+  background-color: darkslategray;
+  color: white;
+  text-align: right;
+  font-size: 3em;
+  padding-left: .5em;
+  padding-right: .5em;
+}
+
+.btn {
+  color: midnightblue;
+  font-size: 3em;;
+  width:100%;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.col-md-3, .col-md-12 {
+  padding-left: 2px;
+  padding-right: 2px;
+}
