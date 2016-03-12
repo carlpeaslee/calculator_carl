@@ -6,9 +6,10 @@ body {
   background-color: darkslategray;
   color: white;
   text-align: right;
-  padding-left: .5em;
-  padding-right: .5em;
+  padding-left: 1em;
+  padding-right: 1em;
   height: 8em;
+  overflow: hidden;
 }
 
 #screen-big {

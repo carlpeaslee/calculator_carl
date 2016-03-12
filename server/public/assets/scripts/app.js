@@ -7,20 +7,21 @@ var yString = "";
 var operator
 
 
-
 //large functions
 
 function inputNumber() {
   xString += $(this).text();
-  xNum = parseInt(xString);
-  $('#screen-big').text(xNum);
+  $('#screen-big').text(xString);
   $('.operator').removeAttr( "disabled", "disabled" );
   if (yNum == null) {
     $('.equals').attr( "disabled", "disabled" );
   }
   if (yNum != null) {
     $('.operator').attr( "disabled", "disabled" );
-    $('.equals').removeAttr( "disabled", "disabled" )
+    $('.equals').removeAttr( "disabled", "disabled" );
+  }
+  if ($(this).text() == "." ) {
+    $('.dot').attr( "disabled", "disabled" );
   }
 
 }
@@ -28,17 +29,17 @@ function inputNumber() {
 function inputOperator(){
   if (yNum == null) {
     operator = $(this).data('operator');
-    yNum = parseInt(xNum);
-    xNum = 0;
+    yNum = xString;
     xString = "";
     $('#screen-small').text(yNum);
     $('#screen-big').text(xString)
     console.log(operator);
     $('.operator').attr( "disabled", "disabled" );
+    $('.dot').removeAttr( "disabled", "disabled" );
   } else {
     $.ajax({
          type: "GET",
-         url: "/math/" + operator + "/" + xNum + "/" + yNum,
+         url: "/math/" + operator + "/" + xString + "/" + yNum,
          success: function(data){
            console.log(data);
            $('#screen-small').text("");
@@ -47,17 +48,11 @@ function inputOperator(){
            xNum = null;
            yNum = null;
            $('.operator').attr( "disabled", "disabled" );
+           $('.dot').removeAttr( "disabled", "disabled" )
          }
      });
   }
 }
-
-//sub functions
-
-
-
-//utility functions
-
 
 $('document').ready( function () {
 
