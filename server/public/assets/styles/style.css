@@ -6,9 +6,22 @@ body {
   background-color: darkslategray;
   color: white;
   text-align: right;
-  font-size: 3em;
   padding-left: .5em;
   padding-right: .5em;
+  height: 8em;
+}
+
+#screen-big {
+  height: 2em;
+  font-size: 3em;
+}
+
+#screen-small {
+  font-size: 1em;
+}
+
+.small-saved {
+  font-size: 1em;
 }
 
 .btn {
