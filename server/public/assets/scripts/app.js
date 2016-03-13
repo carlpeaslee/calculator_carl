@@ -48,10 +48,21 @@ function inputOperator(){
            xNum = null;
            yNum = null;
            $('.operator').attr( "disabled", "disabled" );
-           $('.dot').removeAttr( "disabled", "disabled" )
+           $('.dot').removeAttr( "disabled", "disabled");
          }
      });
   }
+}
+
+function clear(){
+  $('#screen-small').text("");
+  $('#screen-big').text("");
+  xString = "";
+  xNum = null;
+  yNum = null;
+  $('.operator').attr( "disabled", "disabled" );
+  $('.dot').removeAttr( "disabled", "disabled");
+  $('.num').removeAttr( "disabled", "disabled");
 }
 
 $('document').ready( function () {
@@ -61,6 +72,6 @@ $('document').ready( function () {
   //we need click listeners for each button
   $('.btn-default').on('click', inputNumber);
   $('.btn-primary').on('click', inputOperator);
-
+  $('.clear').on('click', clear);
 
 });
